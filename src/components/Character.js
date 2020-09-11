@@ -11,7 +11,8 @@ const StyledCharacter = styled.div`
 export default function Character({ info }) {
     return (
         <StyledCharacter>
-            <h2>{info.name}</h2>
+            {/* <h2>{info.name}</h2> */}
+            <h2>Test Character</h2>
         </StyledCharacter>
 
     )

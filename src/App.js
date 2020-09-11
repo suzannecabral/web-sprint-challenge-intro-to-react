@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
+import Character from './components/Character'
 import DummyData from './components/dummyData'
 
 // console.log(DummyData)
@@ -63,10 +64,22 @@ const App = () => {
   console.log('AllChars outside UseEffect: -----')
   console.log(allChars)
 
+  
+
   return (
     <div className="App">
       <h1 className="Header">Characters</h1>
+      <div className="characterList">
+        {
+          allChars.map(
+            (eachChar) => {
+              return <Character />
+            }
+          )
+        }
+      </div>
     </div>
+
   );
 }
 
