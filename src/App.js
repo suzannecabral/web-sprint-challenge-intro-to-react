@@ -54,7 +54,7 @@ const App = () => {
         // console.log(allChars)
       })
       .catch(err => {
-        console.log('-------There was a problem with the axios call:-------')
+        console.log('-------APP: There was a problem with the axios call:-------')
         console.log(err)
         debugger
       })
