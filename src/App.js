@@ -10,7 +10,7 @@ const App = () => {
   // the state properties here.
 
 // State: all characters
-  const [allChars, setAllChars] = useState([])
+  const [allChars, setAllChars] = useState([DummyData.results])
   
 //State: active character
   const[activeChar, setActiveChar] = useState(0)
@@ -26,12 +26,29 @@ const App = () => {
       .then(res => {
         console.log('Here are the axios results:')
         console.log(res)
-        setAllChars(res.data.results[0])
+
+        // console.log ('Changing all chars to test vals')
+        // setAllChars('test')
+        // console.log(allChars)
+
+
+        //setAllChars is NOT WORKING
+        // doesn't work with axios
+        // doesn't work with dummy data
+        // no error, is just undefined.
+
+        //initializing allChars to DummyData.results works just fine
+
+        //trying to use setAllChars after initializing with DummyData also doesn't work
 
         console.log('-------')
         console.log('All Chars:')
         console.log(allChars)
-        console.log(res.data.results)
+
+        
+        // // console.log(res.data.results)
+        // setAllChars(['test1','test2'])
+        // console.log(allChars)
       })
       .catch(err => {
         console.log('-------There was a problem with the axios call:-------')
@@ -40,7 +57,7 @@ const App = () => {
       })
   }, [])
 
-
+  
 
   return (
     <div className="App">
