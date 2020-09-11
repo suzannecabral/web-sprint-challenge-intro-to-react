@@ -9,11 +9,11 @@ const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
   // the state properties here.
 
-// State: all characters
-  const [allChars, setAllChars] = useState([DummyData.results])
+  // State: all characters
+  const [allChars, setAllChars] = useState(DummyData.results)
   
-//State: active character
-  const[activeChar, setActiveChar] = useState(0)
+  //State: active character
+  // const[activeChar, setActiveChar] = useState(0)
 
 
   // Fetch characters from the API in an effect hook. Remember, anytime you have a 
@@ -25,13 +25,15 @@ const App = () => {
     axios.get("https://swapi.dev/api/people/")
       .then(res => {
         console.log('Here are the axios results:')
-        console.log(res)
+        console.log(res.data.results)
 
+        setAllChars(res.data.results)
         // console.log ('Changing all chars to test vals')
-        // setAllChars('test')
-        // console.log(allChars)
+        
+        console.log('Test Characters: ----------')
+        console.log(allChars)
 
-
+        
         //setAllChars is NOT WORKING
         // doesn't work with axios
         // doesn't work with dummy data
@@ -45,7 +47,7 @@ const App = () => {
         console.log('All Chars:')
         console.log(allChars)
 
-        
+
         // // console.log(res.data.results)
         // setAllChars(['test1','test2'])
         // console.log(allChars)
@@ -58,6 +60,7 @@ const App = () => {
   }, [])
 
   
+
 
   return (
     <div className="App">
