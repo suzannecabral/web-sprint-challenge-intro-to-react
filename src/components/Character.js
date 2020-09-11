@@ -23,6 +23,10 @@ const StyledCharacter = styled.div`
     h2 {
         margin:0 0 1% 0;
         font-size:1.2rem;
+        font-weight:600;
+    }
+    p {
+        font-weight:300;
     }
 
 `
