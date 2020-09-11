@@ -73,7 +73,9 @@ const App = () => {
         {
           allChars.map(
             (eachChar) => {
-              return <Character />
+              return <Character 
+                info = {eachChar}
+              />
             }
           )
         }
