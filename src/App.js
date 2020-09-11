@@ -10,8 +10,8 @@ const App = () => {
   // the state properties here.
 
   // State: all characters
-  const [allChars, setAllChars] = useState(DummyData.results)
-  
+  const [allChars, setAllChars] = useState([])
+
   //State: active character
   // const[activeChar, setActiveChar] = useState(0)
 
@@ -30,8 +30,8 @@ const App = () => {
         setAllChars(res.data.results)
         // console.log ('Changing all chars to test vals')
         
-        console.log('Test Characters: ----------')
-        console.log(allChars)
+        // console.log('Test Characters: ----------')
+        // console.log(allChars)
 
         
         //setAllChars is NOT WORKING
@@ -43,9 +43,9 @@ const App = () => {
 
         //trying to use setAllChars after initializing with DummyData also doesn't work
 
-        console.log('-------')
-        console.log('All Chars:')
-        console.log(allChars)
+        // console.log('-------')
+        // console.log('All Chars:')
+        // console.log(allChars)
 
 
         // // console.log(res.data.results)
@@ -60,7 +60,8 @@ const App = () => {
   }, [])
 
   
-
+  console.log('AllChars outside UseEffect: -----')
+  console.log(allChars)
 
   return (
     <div className="App">
