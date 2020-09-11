@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import './App.css'
 import Character from './components/Character'
-import DummyData from './components/dummyData'
+// import DummyData from './components/dummyData'
 
 // console.log(DummyData)
 
