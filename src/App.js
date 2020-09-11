@@ -75,6 +75,7 @@ const App = () => {
             (eachChar) => {
               return <Character 
                 info = {eachChar}
+                // key = {eachChar.index()}
               />
             }
           )
