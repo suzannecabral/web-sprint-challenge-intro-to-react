@@ -25,8 +25,8 @@ const App = () => {
   useEffect(() => {
     axios.get("https://swapi.dev/api/people/")
       .then(res => {
-        console.log('Here are the axios results:')
-        console.log(res.data.results)
+        // console.log('Here are the axios results:')
+        // console.log(res.data.results)
 
         setAllChars(res.data.results)
         // console.log ('Changing all chars to test vals')
@@ -61,8 +61,8 @@ const App = () => {
   }, [])
 
   
-  console.log('AllChars outside UseEffect: -----')
-  console.log(allChars)
+  // console.log('AllChars outside UseEffect: -----')
+  // console.log(allChars)
 
   
 

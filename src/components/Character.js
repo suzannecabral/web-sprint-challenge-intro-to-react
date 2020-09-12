@@ -21,7 +21,6 @@ const StyledCharacter = styled.div`
     }
 
     h2 {
-        margin:0 0 1% 0;
         font-size:1.2rem;
         font-weight:600;
     }
@@ -35,24 +34,43 @@ const StyledCharacter = styled.div`
 
 export default function Character({ info }) {
 
-    const homeworldUrl = info.homeworld;
-    const speciesUrl = info.species;
+    // const homeworldUrl = info.homeworld;
+    // const speciesUrl = info.species;
 
     // let homeworldName = "Earth"
     let species = "human"
-    let homeworldName = ""
+    let homeworldName = "Earth"
 
-    Axios.get(homeworldUrl)
-        .then(res => {
-            homeworldName = res.data.name
-        })
-        .catch(err => {
-            console.log("CHARACTER: There was a problem with the Axios call ---------")
-            console.log(err)
-            debugger
-        })
+    // Axios.get(homeworldUrl)
+    //     .then(res => {
+    //         // homeworldName = res.data.name
+    //         homeworldName = res
+    //     })
+    //     .catch(err => {
+    //         console.log("CHARACTER: There was a problem with the Axios call ---------")
+    //         console.log(err)
+    //         debugger
+    //     })
 
-        
+
+    function getHomeworld(url){
+        return Axios.get(url)
+            .then(res => {
+                return res.data.name
+            })
+            .catch(err => {
+                console.log("CHARACTER: There was a problem with the Axios call------")
+                console.log(err)
+                debugger
+            })
+    }
+
+    // getHomeworld(info.homeworld)
+    //     .then(data => {
+    //         // console.log("Homeworld Data:")
+    //         homeworldName = data
+    //         console.log(homeworldName)
+    //     })
 
     return (
         <StyledCharacter>
@@ -63,3 +81,7 @@ export default function Character({ info }) {
     )
 
 }
+
+
+
+
