@@ -65,12 +65,11 @@ export default function Character({ info }) {
             })
     }
 
-    // getHomeworld(info.homeworld)
-    //     .then(data => {
-    //         // console.log("Homeworld Data:")
-    //         homeworldName = data
-    //         console.log(homeworldName)
-    //     })
+    getHomeworld(info.homeworld)
+        .then(data => {
+            homeworldName = data
+            console.log(homeworldName)
+        })
 
     return (
         <StyledCharacter>
